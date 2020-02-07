@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -12,10 +12,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
         <LinearLayout
             android:id="@+id/ll_cc"
@@ -39,7 +40,7 @@
 
                 <EditText
                     android:id="@+id/etCountryCode"
-                    android:layout_margin="3dp"
+                    android:layout_margin="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -50,11 +51,8 @@
                     android:gravity="center"
                     />
             </LinearLayout>
-            <!--android:hint="@string/code"-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1.5dp"
-                android:background="@color/colorAccent" />
+
+
         </LinearLayout>
 
         <EditText
@@ -69,22 +67,23 @@
             android:inputType="phone"
             android:paddingEnd="4dp"
             android:paddingStart="4dp"
+            android:gravity="center"
             />
 
     </RelativeLayout>
 
     <Button
         android:id="@+id/btnSendConfirmationCode"
-        android:layout_width="250dp"
-        android:enabled="false"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="46dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        android:layout_margin="250dp"
         android:background="@drawable/rounded_corner_red_rectangle"
+        android:enabled="false"
         android:padding="6dp"
         android:text="@string/send_confirmation_code"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="15sp" />
 
 </LinearLayout>

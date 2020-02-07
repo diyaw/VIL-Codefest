@@ -1,8 +1,11 @@
 package com.example.otplogin;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
+import android.view.View;
+import android.widget.Button;
+
 
 public class OTPVerify extends Activity {
 
@@ -14,5 +17,7 @@ public class OTPVerify extends Activity {
         setContentView(R.layout.verification_code_activity);
         //et = findViewById(R.id.etDigit1);
         //et.setSelection(0);
+
+
     }
 }
