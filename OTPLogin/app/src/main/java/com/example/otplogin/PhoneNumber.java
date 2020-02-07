@@ -8,11 +8,23 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.concurrent.TimeUnit;
 
 public class PhoneNumber extends Activity {
 
     EditText phoneNumber;
     Button buttonCode;
+    FirebaseAuth mAuth;
+    String codeSent;
+    private String verificationid;
+    private ProgressBar progressBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,12 +42,18 @@ public class PhoneNumber extends Activity {
             public void onClick(View arg0) {
 
                 // Start NewActivity.class
+                sendVerificationCode();
                 Intent myIntent = new Intent(PhoneNumber.this,
                         OTPVerify.class);
                 startActivity(myIntent);
             }
         });
     }
+
+
+
+
+
 
     private TextWatcher phoneNumberWatcher = new TextWatcher() {
         @Override
@@ -54,4 +72,46 @@ public class PhoneNumber extends Activity {
 
         }
     };
+
+
+
+
+    private void sendVerificationCode(){
+        String phone = phoneNumber.getText().toString().trim();
+
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                "+91" + phone,        // Phone number to verify
+                60,                 // Timeout duration
+                TimeUnit.SECONDS,   // Unit of timeout
+                this,               // Activity (for callback binding)
+                mCallbacks);        // OnVerificationStateChangedCallbacks
+    }
+
+    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        @Override
+        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+
+        }
+
+        @Override
+        public void onVerificationFailed(FirebaseException e) {
+
+        }
+
+        @Override
+        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+
+            codeSent = s;
+        }
+    };
+
+
+
+
+
+
+
+
+
 }
