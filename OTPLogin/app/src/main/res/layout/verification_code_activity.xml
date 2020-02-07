@@ -34,34 +34,19 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/etDigit1"
-                style="@style/etDigits"
-                android:nextFocusForward="@+id/etDigit2"
+                android:id="@+id/etDigit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:paddingTop="10dp"
+                android:digits="0123456789"
+                android:backgroundTint="@color/colorAccent"
+                android:inputType="number"
+                android:maxLength="6"
+                android:paddingEnd="4dp"
+                android:paddingStart="4dp"
+                android:gravity="center"
                 />
-            <EditText
-
-                android:id="@+id/etDigit2"
-                style="@style/etDigits"
-                android:nextFocusForward="@+id/etDigit3" />
-
-            <EditText
-                android:id="@+id/etDigit3"
-                style="@style/etDigits"
-                android:nextFocusForward="@+id/etDigit4" />
-
-            <EditText
-                android:id="@+id/etDigit4"
-                style="@style/etDigits"
-                android:nextFocusForward="@+id/etDigit5" />
-
-            <EditText
-                android:id="@+id/etDigit5"
-                style="@style/etDigits"
-                android:nextFocusForward="@+id/etDigit6" />
-
-            <EditText
-                android:id="@+id/etDigit6"
-                style="@style/etDigits" />
         </LinearLayout>
 
         <LinearLayout
