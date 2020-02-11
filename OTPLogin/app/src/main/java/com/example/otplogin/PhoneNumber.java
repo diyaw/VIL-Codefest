@@ -1,117 +1,140 @@
 package com.example.otplogin;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-
-import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.FirebaseUser;
+import java.util.Locale;
+import androidx.annotation.RequiresApi;
 
-import java.util.concurrent.TimeUnit;
 
 public class PhoneNumber extends Activity {
 
+    private static final String TAG = "1";
     EditText phoneNumber;
     Button buttonCode;
-    FirebaseAuth mAuth;
-    String codeSent;
-    private String verificationid;
-    private ProgressBar progressBar;
 
+
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         // Get the view from new_activity.xml
         setContentView(R.layout.phone_number_activity);
-
         //Enabling button if Phone Number is entered
         phoneNumber = findViewById(R.id.etPhoneNumber);
-        buttonCode = (Button) findViewById(R.id.btnSendConfirmationCode);
-        phoneNumber.addTextChangedListener(phoneNumberWatcher);
+
+
+        buttonCode = findViewById(R.id.btnSendConfirmationCode);
+//        phoneNumber.addTextChangedListener(phoneNumberWatcher);
 
         // Switch to next activity
         buttonCode.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                // Start NewActivity.class
-                sendVerificationCode();
-                Intent myIntent = new Intent(PhoneNumber.this,
-                        OTPVerify.class);
-                startActivity(myIntent);
+                String mobile = phoneNumber.getText().toString().trim();
+
+                if(mobile.isEmpty() || mobile.length() < 10){
+                    phoneNumber.setError("Enter a valid mobile");
+                    phoneNumber.requestFocus();
+                    return;
+                }
+
+                Intent intent = new Intent(PhoneNumber.this, OTPVerify.class);
+                intent.putExtra("mobile", mobile);
+                startActivity(intent);
+
             }
         });
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Intent i = new Intent(PhoneNumber.this, HomeActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        } else {
+            // User is signed out
+            Log.d(TAG, "onAuthStateChanged:signed_out");
+        }
+
+        findViewById(R.id.changeLanguage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showChangeLanguageDialog();
+
+            }
+        });
+
+
+
     }
 
+        private void showChangeLanguageDialog(){
+        final String[] listItems = { "हिंदी", "मराठी", "বাংলা", "English"};
+            AlertDialog.Builder builder = new AlertDialog.Builder(PhoneNumber.this);
+            builder.setTitle("Choose Language...");
+            builder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    if (i == 0){
+                        setLocale("hi");
+                        recreate();
+                    }
 
+                    else if (i==1){
+                        setLocale("mr");
+                        recreate();
+                    }
 
+                    else if(i==2){
+                        setLocale("bn");
+                        recreate();
+                    }
 
+                    else if (i==3){
+                        setLocale("en");
+                        recreate();
+                    }
+                    dialogInterface.dismiss();
 
+                }
+            });
 
-    private TextWatcher phoneNumberWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+
 
         }
 
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            String phoneDetails = phoneNumber.getText().toString();
-            buttonCode.setEnabled(!phoneDetails.isEmpty() && phoneDetails.length() == 10);
+        private  void setLocale(String lang){
+            Locale locale = new Locale(lang);
+            Locale.setDefault(locale);
+            Configuration configuration = new Configuration();
+            configuration.locale = locale;
+            getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+
+            SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+            editor.putString("My_Lang",lang);
+            editor.apply();
         }
 
-        @Override
-        public void afterTextChanged(Editable s) {
-
+        public void loadLocale(){
+        SharedPreferences preferences = getSharedPreferences("Settings",Activity.MODE_PRIVATE);
+        String language = preferences.getString("My_Lang", "");
+        setLocale(language);
         }
-    };
-
-
-
-
-    private void sendVerificationCode(){
-        String phone = phoneNumber.getText().toString().trim();
-
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                "+91" + phone,        // Phone number to verify
-                60,                 // Timeout duration
-                TimeUnit.SECONDS,   // Unit of timeout
-                this,               // Activity (for callback binding)
-                mCallbacks);        // OnVerificationStateChangedCallbacks
-    }
-
-    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-
-        }
-
-        @Override
-        public void onVerificationFailed(FirebaseException e) {
-
-        }
-
-        @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-
-            codeSent = s;
-        }
-    };
-
-
-
-
-
-
-
-
 
 }

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -6,7 +11,37 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.otplogin.PhoneNumber">
+    tools:context="com.example.otplogin.PhoneNumber"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/curve_bottom"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slogan"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="50dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+             />
+
+    </RelativeLayout>
+
+
+
+
+
+
 
 
     <RelativeLayout
@@ -14,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         android:layout_gravity="center">
 
@@ -25,6 +60,7 @@
             android:orientation="vertical"
             android:layout_centerVertical="true"
             android:gravity="center">
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -64,26 +100,47 @@
             android:layout_toRightOf="@+id/ll_cc"
             android:backgroundTint="@color/colorAccent"
             android:digits="0123456789"
-            android:inputType="phone"
             android:paddingEnd="4dp"
             android:paddingStart="4dp"
             android:gravity="center"
+            android:hint="@string/hidden_Phone"
             />
+
+
+
+
+
+
+
+
 
     </RelativeLayout>
 
     <Button
         android:id="@+id/btnSendConfirmationCode"
-        android:layout_width="217dp"
+        android:layout_width="200dp"
         android:layout_height="46dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="250dp"
+        android:layout_margin="20dp"
         android:background="@drawable/rounded_corner_red_rectangle"
-        android:enabled="false"
+
         android:padding="6dp"
         android:text="@string/send_confirmation_code"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
+    <Button
+        android:id="@+id/changeLanguage"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_corner_red_rectangle"
+        android:padding="8dp"
+        android:text="@string/change_lang"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+
 </LinearLayout>
+</ScrollView>
