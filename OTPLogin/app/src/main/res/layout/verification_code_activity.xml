@@ -73,12 +73,12 @@
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
-            <ProgressBar
-                android:id="@+id/pbVerify"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:visibility="gone"
-                android:theme="@style/AppTheme.WhiteAccent"/>
+<!--            <ProgressBar-->
+<!--                android:id="@+id/pbVerify"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:visibility="gone"-->
+<!--                android:theme="@style/AppTheme.WhiteAccent"/>-->
         </LinearLayout>
 
 
