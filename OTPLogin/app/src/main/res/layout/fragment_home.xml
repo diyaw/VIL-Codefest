@@ -22,7 +22,8 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/deals">
+        android:layout_below="@+id/deals"
+        >
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
@@ -30,6 +31,7 @@
 
 
             <LinearLayout
+                android:id="@+id/linearlayoutdeals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -96,6 +98,13 @@
 
         </HorizontalScrollView>
     </ScrollView>
+
+    <com.hitomi.cmlibrary.CircleMenu
+
+        android:id="@+id/circle_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 
 
