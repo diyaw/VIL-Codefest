@@ -76,7 +76,7 @@ public class PhoneNumber extends Activity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // User is signed in
-            Intent i = new Intent(PhoneNumber.this, HomeActivity.class);
+            Intent i = new Intent(PhoneNumber.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         } else {

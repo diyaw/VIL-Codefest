@@ -2,12 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
     buildToolsVersion "29.0.2"
+    useLibrary('org.apache.http.legacy')
     defaultConfig {
         applicationId "com.example.otplogin"
         minSdkVersion 19
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -26,7 +27,6 @@ repositories {
 
 
 dependencies {
-//    compile(name: 'razorpay-android-3.8.8', ext: 'aar')
     implementation 'com.razorpay:checkout:1.5.13'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -40,5 +40,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+    implementation 'com.github.Hitomis:CircleMenu:v1.1.0'
+
+
+
 
 }
