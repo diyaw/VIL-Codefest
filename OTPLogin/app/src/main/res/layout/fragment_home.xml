@@ -90,23 +90,12 @@
                     android:layout_marginBottom="15dp"
 
                     android:background="@drawable/sample"></Button>
-
-
             </LinearLayout>
-
-
-
         </HorizontalScrollView>
     </ScrollView>
 
-    <com.hitomi.cmlibrary.CircleMenu
-
+        <com.hitomi.cmlibrary.CircleMenu
         android:id="@+id/circle_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
-
-
-
+        android:layout_height="match_parent" />
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.otplogin;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -8,9 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -44,7 +48,7 @@ public class AccountFragment extends Fragment {
     TextView validityDuration;
     TextView rechargePlan;
 
-    String host = "http://192.168.35.39/vil/getAccountInfo.php";
+    String hostAddress = "http://192.168.32.109/vil/getAccountInfo.php";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,39 +63,22 @@ public class AccountFragment extends Fragment {
         phoneNumber = (TextView)RootView.findViewById(R.id.phoneNumber);
         rechargePlan = (TextView)RootView.findViewById(R.id.lastRecharge);
         validityDuration = (TextView)RootView.findViewById(R.id.validity);
+        Button signOut = (Button)RootView.findViewById(R.id.buttonSignOut);
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(),PhoneNumber.class);
+                startActivity(intent);
+            }
+        });
 
         getDetails();
         return RootView;
     }
 
     public void getDetails(){
-        //new SetDetails().execute();
         new GetDetails().execute();
-    }
-
-    class SetDetails extends AsyncTask<String, Void, String> {
-
-        protected String doInBackground(String... params) {
-            try{
-                HttpClient httpClient = new DefaultHttpClient();
-                InputStream is = null;
-                HttpPost httppost = new HttpPost(host);
-                List<NameValuePair> nameValuePairs = new ArrayList<>();
-                nameValuePairs.add(new BasicNameValuePair("phoneNo","8879354575"));
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                HttpResponse responsePost = httpClient.execute(httppost);
-                HttpEntity entity = responsePost.getEntity();
-                is = entity.getContent();
-
-                Log.e("data", is.toString());
-
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return "Value Sent";
-        }
     }
 
     class GetDetails extends AsyncTask<String, String, String> {
@@ -99,6 +86,8 @@ public class AccountFragment extends Fragment {
         protected String doInBackground(String... params) {
             String result = "";
             try{
+                String data = "8879354575";
+                String host = hostAddress+"?phoneNo="+data;
                 HttpClient client = new DefaultHttpClient();
                 HttpGet request = new HttpGet();
                 request.setURI(new URI(host));
