@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UnoFragment">
+    tools:context=".TresFragment">
 
 
 
@@ -65,6 +65,7 @@
                     ></Button>
 
                 <Button
+                    android:id="@+id/arButton"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
                     android:layout_margin="10dp"

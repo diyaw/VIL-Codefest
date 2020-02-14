@@ -5,6 +5,8 @@ buildscript {
         google()
         jcenter()
 
+        mavenLocal()
+
 
 
     }
