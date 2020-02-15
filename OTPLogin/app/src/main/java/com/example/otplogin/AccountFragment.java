@@ -49,6 +49,9 @@ public class AccountFragment extends Fragment {
     TextView validityDuration;
     TextView rechargePlan;
 
+    Button vodaCoins;
+    Button scratchCards;
+
     String hostAddress = "http://10.10.40.11/vil/getAccountInfo.php";
     String phone = "";
 
@@ -79,6 +82,8 @@ public class AccountFragment extends Fragment {
             }
         });
 
+        vodaCoins = RootView.findViewById(R.id.vodaCoins);
+        scratchCards = RootView.findViewById(R.id.scratchCards);
         getDetails();
         return RootView;
     }
