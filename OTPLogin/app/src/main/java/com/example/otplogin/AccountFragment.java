@@ -49,7 +49,7 @@ public class AccountFragment extends Fragment {
     TextView validityDuration;
     TextView rechargePlan;
 
-    String hostAddress = "http://192.168.1.11/vil/getAccountInfo.php";
+    String hostAddress = "http://10.10.40.11/vil/getAccountInfo.php";
     String phone = "";
 
     @Override
