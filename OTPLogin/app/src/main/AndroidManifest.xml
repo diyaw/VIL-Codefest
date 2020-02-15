@@ -4,9 +4,6 @@
     package="com.example.otplogin">
 
     <uses-permission android:name="android.permission.INTERNET" android:required="true" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" android:required="true" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" android:required="true"/>
     <uses-permission android:name="android.permission.READ_SMS" android:required="true"/>
@@ -57,16 +54,6 @@
                 android:name="com.razorpay.ApiKey"
                 android:value="rzp_test_V0RhdwLOQO5tCB"/>
             <meta-data android:name="com.google.ar.core" android:value="required" />
-
-            <provider
-                android:name="androidx.core.content.FileProvider"
-                android:authorities="${applicationId}.ar.codelab.name.provider"
-                android:exported="false"
-                android:grantUriPermissions="true">
-                <meta-data
-                    android:name="android.support.FILE_PROVIDER_PATHS"
-                    android:resource="@xml/paths" />
-            </provider>
         </application>
 
 
