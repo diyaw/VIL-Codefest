@@ -50,12 +50,13 @@
         android:layout_height="46dp"
         android:layout_gravity="center_horizontal"
         android:layout_margin="25dp"
-        android:background="@drawable/rounded_corner_red_rectangle"
+
         android:padding="6dp"
         android:text="Pay for Recharge"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:background="@drawable/button_style"/>
 
 
 

@@ -33,7 +33,7 @@ public class DosFragment extends Fragment {
         View RootView = inflater.inflate(R.layout.fragment_two, container, false);
 
         tabLayout = (TabLayout)RootView.findViewById(R.id.tablayout_id);
-        appBarLayout = (AppBarLayout) RootView.findViewById(R.id.appBarID);
+        //appBarLayout = (AppBarLayout) RootView.findViewById(R.id.appBarID);
         viewPager = (ViewPager) RootView.findViewById(R.id.viewpager_id);
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());

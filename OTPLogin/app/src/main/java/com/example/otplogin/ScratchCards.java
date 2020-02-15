@@ -1,6 +1,7 @@
 package com.example.otplogin;
 
 import android.os.Bundle;
+import android.provider.DocumentsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,18 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class RechargeAllRounderFragment extends Fragment {
-    View view;
-
-    public RechargeAllRounderFragment() {
-    }
-
+public class ScratchCards extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.recharge_allrounder_fragment, container, false);
-        return view;
+        View RootView = inflater.inflate(R.layout.scratch_card_fragment, container, false);
+        return RootView;
     }
-
-
 }

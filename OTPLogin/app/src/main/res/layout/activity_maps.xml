@@ -29,6 +29,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:onClick="onClick"
+            android:background="@drawable/button_style"
             />
 
     </RelativeLayout>
@@ -64,7 +65,7 @@
             android:layout_marginStart="98dp"
             android:layout_marginEnd="97dp"
             android:layout_marginBottom="0dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/button_style"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:onClick="onClick"

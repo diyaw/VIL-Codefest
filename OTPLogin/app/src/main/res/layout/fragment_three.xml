@@ -34,6 +34,7 @@
 
 
             <LinearLayout
+                android:layout_marginTop="75dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -44,9 +45,10 @@
 
                 <Button
                     android:layout_width="300dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
+                    android:textColor="@color/white"
                     android:layout_margin="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="40dp"
                     android:text="@string/play_games"
                     android:background="@drawable/shape_linear_layout"
 
@@ -55,8 +57,9 @@
                 <Button
                     android:id="@+id/survey"
                     android:layout_width="300dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_height="75dp"
+                    android:textColor="@color/white"
+                    android:layout_margin="15dp"
                     android:text="@string/survey"
                     android:background="@drawable/shape_linear_layout"
 
@@ -65,8 +68,9 @@
                 <Button
                     android:id="@+id/task"
                     android:layout_width="300dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_height="75dp"
+                    android:textColor="@color/white"
+                    android:layout_margin="15dp"
                     android:text="@string/task"
                     android:background="@drawable/shape_linear_layout"
 
@@ -75,9 +79,21 @@
                 <Button
                     android:id="@+id/arButton"
                     android:layout_width="300dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_height="75dp"
+                    android:textColor="@color/white"
+                    android:layout_margin="15dp"
                     android:text="@string/camera"
+                    android:background="@drawable/shape_linear_layout"
+
+                    ></Button>
+
+                <Button
+                    android:id="@+id/spend_voda_coins"
+                    android:layout_width="300dp"
+                    android:layout_height="75dp"
+                    android:textColor="@color/white"
+                    android:layout_margin="15dp"
+                    android:text="@string/spendVodaCoins"
                     android:background="@drawable/shape_linear_layout"
 
                     ></Button>
