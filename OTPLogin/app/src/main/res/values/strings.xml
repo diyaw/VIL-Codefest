@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OTPAuthentication</string>
+    <string name="app_name">MyVodafone</string>
     <string name="phone_number">Phone Number</string>
     <string name="generate_otp" translatable="false">Generate OTP</string>
     <string name="enter_otp">Enter OTP</string>
