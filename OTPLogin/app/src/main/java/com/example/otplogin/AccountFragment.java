@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -52,7 +53,7 @@ public class AccountFragment extends Fragment {
     Button vodaCoins;
     Button scratchCards;
 
-    String hostAddress = "http://10.10.40.11/vil/getAccountInfo.php";
+    String hostAddress = "http://10.10.40.58/vil/getAccountInfo.php";
     String phone = "";
 
     @Override
@@ -84,8 +85,32 @@ public class AccountFragment extends Fragment {
 
         vodaCoins = RootView.findViewById(R.id.vodaCoins);
         scratchCards = RootView.findViewById(R.id.scratchCards);
+
+        vodaCoins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new VodaCoins());
+            }
+        });
+
+        scratchCards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new ScratchCards());
+            }
+        });
+
         getDetails();
         return RootView;
+    }
+
+    public void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     public void getDetails(){
@@ -163,6 +188,4 @@ public class AccountFragment extends Fragment {
         }
         }
     }
-
-
 }
