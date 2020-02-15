@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = findViewById(R.id.navigationView);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        toolbar.setTitle("Uno");
         loadFragment(new UnoFragment());
     }
 
@@ -38,23 +37,23 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.home:
-                    //toolbar.setTitle("Home");
+                    toolbar.setTitle("Home");
                     loadFragment(new UnoFragment());
                     return true;
                 case R.id.frag2:
-                    //toolbar.setTitle("Icon 2");
+                    toolbar.setTitle("Recharge");
                     loadFragment(new DosFragment());
                     return true;
                 case R.id.frag3:
-                    //toolbar.setTitle("Icon 3");
+                    toolbar.setTitle("Earn VodaCoins");
                     loadFragment(new TresFragment());
                     return true;
                 case R.id.frag4:
-                    //toolbar.setTitle("Icon 4");
+                    toolbar.setTitle("Explore");
                     loadFragment(new CautroFragment());
                     return true;
                 case R.id.account:
-                    //toolbar.setTitle("Account");
+                    toolbar.setTitle("Profile");
                     loadFragment(new AccountFragment());
                     return true;
             }
