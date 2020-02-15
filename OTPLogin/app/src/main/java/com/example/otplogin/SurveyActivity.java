@@ -4,6 +4,7 @@ package com.example.otplogin;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,8 +44,11 @@ public class SurveyActivity extends AppCompatActivity {
         mButtonChoice1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                mButtonChoice1.setBackgroundColor(Color.rgb(0, 204, 68));
+
                 //My logic for Button goes in here
                 updateQuestion();
+                mButtonChoice1.setBackgroundColor(Color.rgb(0, 145, 234));
 
             }
         });
@@ -55,9 +59,12 @@ public class SurveyActivity extends AppCompatActivity {
         mButtonChoice2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                mButtonChoice2.setBackgroundColor(Color.rgb(0, 204, 68));
+
                 //My logic for Button goes in here
 
                updateQuestion();
+                mButtonChoice2.setBackgroundColor(Color.rgb(0, 145, 234));
             }
         });
 
@@ -68,7 +75,10 @@ public class SurveyActivity extends AppCompatActivity {
         mButtonChoice3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                mButtonChoice3.setBackgroundColor(Color.rgb(0, 204, 68));
+
                 //My logic for Button goes in here
+                mButtonChoice3.setBackgroundColor(Color.rgb(0, 145, 234));
 
                updateQuestion();
             }
@@ -89,7 +99,7 @@ public class SurveyActivity extends AppCompatActivity {
         mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
 
 //        mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
-        if(mQuestionNumber++ >= 3){
+        if(mQuestionNumber++ == 3 ){
             openDialog();
 
 
