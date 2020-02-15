@@ -48,7 +48,7 @@ public class TresFragment extends Fragment {
         buttonSurvey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(getActivity(), MapsActivity.class);
+                Intent intent =  new Intent(getActivity(), SurveyActivity.class);
                 startActivity(intent);
             }
         });

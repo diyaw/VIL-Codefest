@@ -73,7 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker currentLocationMarker;
     public static final int REQUEST_LOCATION_CODE = 99;
     private double latitude, longitude;
-    private int ProximityRadius = 1000;
+    private int ProximityRadius = 10000;
     private double hlat;
     private double hlng;
     private MarkerOptions place2;
