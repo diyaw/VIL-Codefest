@@ -60,11 +60,21 @@ public class UnoFragment extends Fragment {
                         switch (index){
 
                             case 1:
+
                                 Toast.makeText(getActivity(), "This is my Toast message!"+arrayName[index],
                                         Toast.LENGTH_LONG).show();
                                 Intent intent =  new Intent(getActivity(), USSDLIst.class);
                                 startActivity(intent);
                                 break;
+                            case 2 :
+                                Toast.makeText(getActivity(), "This is my Toast message!"+arrayName[index],
+                                        Toast.LENGTH_LONG).show();
+                                Intent intent1 =  new Intent(getActivity(), MapsActivity.class);
+                                startActivity(intent1);
+                                break;
+
+
+
 
 
                         }

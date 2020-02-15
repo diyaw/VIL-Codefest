@@ -46,7 +46,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".InfoWindowAdapter"></activity>
+        <activity android:name=".SurveyActivity"></activity>
+        <activity android:name=".InfoWindowAdapter" />
         <activity android:name=".InfoPage" />
         <activity android:name=".Map2Activity" />
 
