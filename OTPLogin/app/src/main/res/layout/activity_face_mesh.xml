@@ -20,6 +20,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="bottom|center"
       android:layout_margin="25sp"
+
       app:srcCompat="@android:drawable/ic_menu_camera" />
 
 

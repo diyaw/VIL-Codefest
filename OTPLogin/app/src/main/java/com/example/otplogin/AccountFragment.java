@@ -82,8 +82,8 @@ public class AccountFragment extends Fragment {
             }
         });
 
-        vodaCoins = RootView.findViewById(R.id.vodaCoins);
-        scratchCards = RootView.findViewById(R.id.scratchCards);
+        //vodaCoins = RootView.findViewById(R.id.vodaCoins);
+        //scratchCards = RootView.findViewById(R.id.scratchCards);
         getDetails();
         return RootView;
     }

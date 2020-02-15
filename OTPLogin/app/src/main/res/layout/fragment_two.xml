@@ -21,25 +21,11 @@
 <!--        ></TextView>-->
 
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="center"
-        android:elevation="0dp"
-        android:id="@+id/appBarID"
-        android:background="@color/white">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@drawable/vodafone_logo"
-            />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="15sp"
         android:layout_height="wrap_content"
         app:tabGravity="fill"
         app:tabMode="scrollable"

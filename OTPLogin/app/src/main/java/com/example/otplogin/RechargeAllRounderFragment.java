@@ -21,4 +21,6 @@ public class RechargeAllRounderFragment extends Fragment {
         view = inflater.inflate(R.layout.recharge_allrounder_fragment, container, false);
         return view;
     }
+
+
 }
