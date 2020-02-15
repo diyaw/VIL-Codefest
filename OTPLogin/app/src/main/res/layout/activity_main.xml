@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        app:itemBackground="?selectableItemBackgroundBorderless"
+        app:itemBackground="@color/colorPrimary"
         app:itemHorizontalTranslationEnabled="true"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav"

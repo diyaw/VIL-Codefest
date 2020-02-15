@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -48,11 +49,16 @@ public class AccountFragment extends Fragment {
     TextView validityDuration;
     TextView rechargePlan;
 
-    String hostAddress = "http://192.168.32.109/vil/getAccountInfo.php";
+    String hostAddress = "http://192.168.1.11/vil/getAccountInfo.php";
+    String phone = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        phone  = user.getPhoneNumber();
+
+
 
         View RootView = inflater.inflate(R.layout.fragment_account, container, false);
         // Inflate the layout for this fragment
@@ -86,8 +92,8 @@ public class AccountFragment extends Fragment {
         protected String doInBackground(String... params) {
             String result = "";
             try{
-                String data = "8879354575";
-                String host = hostAddress+"?phoneNo="+data;
+                String finalPhone = phone.replace("+91","");
+                String host = hostAddress+"?phoneNo="+finalPhone;
                 HttpClient client = new DefaultHttpClient();
                 HttpGet request = new HttpGet();
                 request.setURI(new URI(host));

@@ -57,6 +57,7 @@
                     ></Button>
 
                 <Button
+                    android:id="@+id/task"
                     android:layout_width="300dp"
                     android:layout_height="100dp"
                     android:layout_margin="10dp"

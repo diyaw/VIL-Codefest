@@ -33,6 +33,16 @@ public class TresFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        Button buttonTask = (Button)RootView.findViewById(R.id.task);
+
+        buttonTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(getActivity(), USSDLIst.class);
+                startActivity(intent);
+            }
+        });
+
 
         return RootView;
     }
