@@ -68,4 +68,6 @@ dependencies {
 
     //Scratch Card
     implementation 'com.github.AnupKumarPanwar:ScratchView:1.2'
+
+    implementation 'com.ebanx:swipe-button:0.8.3'
 }
