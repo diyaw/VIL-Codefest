@@ -124,7 +124,19 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                         Intent intent = new Intent(getActivity(),MainActivity.class);
                         startActivity(intent);
 
+                    } else if (Found.equals("Vodafone Stores Near Me")){
+                        Intent intent = new Intent(getActivity(),MapsActivity.class);
+                        startActivity(intent);
+
+                    }  else if (Found.equals("QuickRecharge")){
+                        Intent intent = new Intent(getActivity(),RazorPayGateway.class);
+                        intent.putExtra("amountPrevious","399");
+                        startActivity(intent);
+
                     }
+
+
+
 
                     else {
                         Toast.makeText(getActivity(), "Sorry, I didn't catch that! Please try again", Toast.LENGTH_LONG).show();
@@ -153,6 +165,18 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                 return "Recharge";
             case "home":
                 return "Home";
+            case "Vodafone stores near me":
+                return "Vodafone Stores Near Me";
+            case "Vodafone stores":
+                return "Vodafone Stores Near Me";
+            case "vodacoins":
+                return "Profile";
+            case "balance":
+                return "Profile";
+            case "data":
+                return "Profile";
+            case "quick recharge":
+                return "QuickRecharge";
         }
         return "Sorry";
     }
