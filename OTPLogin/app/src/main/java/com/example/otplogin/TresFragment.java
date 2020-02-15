@@ -43,6 +43,16 @@ public class TresFragment extends Fragment {
             }
         });
 
+        Button buttonSurvey = (Button)RootView.findViewById(R.id.survey);
+
+        buttonSurvey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(getActivity(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         return RootView;
     }

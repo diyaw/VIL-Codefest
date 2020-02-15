@@ -73,7 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker currentLocationMarker;
     public static final int REQUEST_LOCATION_CODE = 99;
     private double latitude, longitude;
-    private int ProximityRadius = 10000;
+    private int ProximityRadius = 1000;
     private double hlat;
     private double hlng;
     private MarkerOptions place2;
@@ -195,7 +195,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions.position(latLng);
         markerOptions.title("Hi , You Are Here");
         mMap.setInfoWindowAdapter(infoWindowAdapter);
-        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.mipmap.user));
+        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.mipmap.pin));
 
         currentLocationMarker = mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
@@ -232,7 +232,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     public void onClick(View v){
-        String parking = "restraunts", car_repair = "car_repair" ,  car_wash = "car_wash" ;
+        String stores = "store" ;
         Object transferData[] = new Object[2];
 
         GetNearByPlaces getNearbyPlaces = new GetNearByPlaces();
@@ -268,7 +268,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 userMarkeroptions.title(address.toUpperCase());
                                 userMarkeroptions.snippet(String.valueOf(latLng));
 
-                                userMarkeroptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+                                userMarkeroptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                                 mMap.addMarker(userMarkeroptions);
                                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                                 mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
@@ -310,20 +310,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 break;
 
-            case R.id.nearby_parkings:
+            case R.id.nearby_service:
 
 
                 mMap.clear();
 
 
 
-                String url = getUrl(latitude,longitude,parking);
+                String url = getUrl(latitude,longitude,stores);
                 transferData[0] = mMap;
                 transferData[1] = url;
 
                 getNearbyPlaces.execute(transferData);
-                Toast.makeText(this,"Searching For Nearby Parking",Toast.LENGTH_SHORT).show();
-                Toast.makeText(this,"Showing Nearby Parking",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Searching For Nearby Vodafone Stores",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Showing Nearby Vodafone Stores",Toast.LENGTH_SHORT).show();
                 mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                     @Override
                     public void onInfoWindowClick(Marker marker) {
@@ -388,30 +388,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-            case R.id.nearby_carrepair:
-                mMap.clear();
-                url = getUrl(latitude,longitude,car_repair);
-                transferData[0] = mMap;
-                transferData[1] = url;
-
-                getNearbyPlaces.execute(transferData);
-                Toast.makeText(this,"Searching For Nearby Car Repair",Toast.LENGTH_SHORT).show();
-                Toast.makeText(this,"Showing Nearby Car Repair",Toast.LENGTH_SHORT).show();
-                break;
-
-
+//            case R.id.nearby_carrepair:
+//                mMap.clear();
+//                url = getUrl(latitude,longitude,car_repair);
+//                transferData[0] = mMap;
+//                transferData[1] = url;
+//
+//                getNearbyPlaces.execute(transferData);
+//                Toast.makeText(this,"Searching For Nearby Car Repair",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this,"Showing Nearby Car Repair",Toast.LENGTH_SHORT).show();
+//                break;
 
 
-            case R.id.nearby_carwash:
-                mMap.clear();
-                url = getUrl(latitude,longitude,car_wash);
-                transferData[0] = mMap;
-                transferData[1] = url;
 
-                getNearbyPlaces.execute(transferData);
-                Toast.makeText(this,"Searching For Nearby Car Washes",Toast.LENGTH_SHORT).show();
-                Toast.makeText(this,"Showing Nearby Car Washing",Toast.LENGTH_SHORT).show();
-                break;
+//
+//            case R.id.nearby_carwash:
+//                mMap.clear();
+//                url = getUrl(latitude,longitude,car_wash);
+//                transferData[0] = mMap;
+//                transferData[1] = url;
+//
+//                getNearbyPlaces.execute(transferData);
+//                Toast.makeText(this,"Searching For Nearby Car Washes",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this,"Showing Nearby Car Washing",Toast.LENGTH_SHORT).show();
+//                break;
         }
     }
 
@@ -427,7 +427,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         googleURL.append("location=" + latitude + "," + longitude);
         googleURL.append("&radius=" + ProximityRadius);
 
-        googleURL.append("&type=" + nearByPlace);
+//        googleURL.append("&type=" + nearByPlace);
+        googleURL.append("&keyword=" + "vodafone");
 
 
         googleURL.append("&sensor=true");
