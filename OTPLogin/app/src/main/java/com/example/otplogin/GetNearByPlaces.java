@@ -4,6 +4,7 @@ package com.example.otplogin;
 
 
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+@SuppressLint("NewApi")
 public class GetNearByPlaces extends AsyncTask<Object,String , String> implements GoogleMap.OnInfoWindowClickListener {
     private  String googleplaceData , url;
     private GoogleMap mMap;

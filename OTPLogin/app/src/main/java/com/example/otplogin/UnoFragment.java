@@ -1,6 +1,7 @@
 package com.example.otplogin;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -43,10 +44,11 @@ public class UnoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         View RootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         CircleMenu circleMenu=(CircleMenu)RootView.findViewById(R.id.circle_menu);
-        circleMenu.setMainMenu(Color.parseColor("#ffcccc"),R.drawable.icon_menu,R.drawable.icon_home)
+        circleMenu.setMainMenu(Color.parseColor("#ffcccc"),R.drawable.menu,R.drawable.icon_home)
                 .addSubMenu(Color.parseColor("#ff0000"),R.drawable.icon_cancel)
                 .addSubMenu(Color.parseColor("#cc0000"),R.drawable.icon_notify)
                 .addSubMenu(Color.parseColor("#b20000"),R.drawable.icon_gps)
@@ -55,8 +57,18 @@ public class UnoFragment extends Fragment {
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
                     @Override
                     public void onMenuSelected(int index) {
-                        Toast.makeText(getActivity(), "This is my Toast message!",
-                                Toast.LENGTH_LONG).show();
+                        switch (index){
+
+                            case 1:
+                                Toast.makeText(getActivity(), "This is my Toast message!"+arrayName[index],
+                                        Toast.LENGTH_LONG).show();
+                                Intent intent =  new Intent(getActivity(), USSDLIst.class);
+                                startActivity(intent);
+                                break;
+
+
+                        }
+
 
                     }
                 });

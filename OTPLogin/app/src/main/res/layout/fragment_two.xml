@@ -10,10 +10,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/recharge"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textAlignment="center"
         android:layout_margin="10dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_centerHorizontal="true"
         ></TextView>
 
 
@@ -31,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/shape_linear_layout" >
+                 >
 
 
 
@@ -40,6 +42,7 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:text="@string/recommended"
+                    android:background="@drawable/shape_linear_layout"
 
 
                     ></Button>
@@ -48,6 +51,7 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:text="@string/unlimited"
+                    android:background="@drawable/shape_linear_layout"
 
 
                     ></Button>
@@ -56,6 +60,7 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:text="@string/allrounder"
+                    android:background="@drawable/shape_linear_layout"
 
 
                     ></Button>
@@ -64,6 +69,16 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:text="@string/data"
+                    android:background="@drawable/shape_linear_layout"
+
+
+                    ></Button>
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="@string/grouprecharge"
+                    android:background="@drawable/shape_linear_layout"
 
 
                     ></Button>
