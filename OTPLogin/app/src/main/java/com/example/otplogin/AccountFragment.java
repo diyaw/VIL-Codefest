@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -82,10 +83,36 @@ public class AccountFragment extends Fragment {
             }
         });
 
+        vodaCoins = RootView.findViewById(R.id.vodaCoins);
+        scratchCards = RootView.findViewById(R.id.scratchCards);
+
+        vodaCoins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new VodaCoins());
+            }
+        });
+
+        scratchCards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new ScratchCards());
+            }
+        });
+
         //vodaCoins = RootView.findViewById(R.id.vodaCoins);
         //scratchCards = RootView.findViewById(R.id.scratchCards);
         getDetails();
         return RootView;
+    }
+
+    public void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     public void getDetails(){
