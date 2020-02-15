@@ -2,18 +2,18 @@ package com.example.otplogin;
 
 public class QuestionLibrary {
     private String mQuestions [] = {
-            "Which part of the plant holds it in the soil?",
-            "This part of the plant absorbs energy from the sun.",
-            "This part of the plant attracts bees, butterflies and hummingbirds.",
-            "The _______ holds the plant upright."
+            "How does the app run after the update?",
+            "How do you like the app design?",
+            "How would you rate our app?",
+            "Would you recommend this app to your friends?"
 
     };
 
     private String mChoices [][] = {
-            {"Roots", "Stem", "Flower"},
-            {"Fruit", "Leaves", "Seeds"},
-            {"Bark", "Flower", "Roots"},
-            {"Flower", "Leaves", "Stem"}
+            {"Fast", "Slow", "Crash"},
+            {"Good", "Bad", "Medium"},
+            {"Great", "Ok", "Cool"},
+            {"Yes", "No", "Not Much"}
     };
 
 
