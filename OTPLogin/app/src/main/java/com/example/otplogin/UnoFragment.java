@@ -169,8 +169,8 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                 case 10:
                     String Found = new UnoFragment().getNumberFromResult(data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS));
                     if (Found.equals("Recharge")) {
-                        Intent intent = new Intent(getActivity(), RechargeAllRounderFragment.class);
-                        startActivity(intent);
+                        loadFragment(new DosFragment());
+
                         //firstNumTextView.setText(String.valueOf(intFound));
                     } else if (Found.equals("Home")){
                         Intent intent = new Intent(getActivity(),MainActivity.class);
@@ -187,8 +187,7 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
 
 
                     } else if (Found.equals("Profile")) {
-                        Intent intent = new Intent(getActivity(), AccountFragment.class);
-                        startActivity(intent);
+                       loadFragment(new AccountFragment());
                     }
 
                     else if (Found.equals("Offers")) {

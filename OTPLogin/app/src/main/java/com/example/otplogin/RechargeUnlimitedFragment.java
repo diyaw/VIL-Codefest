@@ -1,6 +1,7 @@
 package com.example.otplogin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -33,10 +34,13 @@ import java.io.InputStreamReader;
 import java.net.URI;
 
 public class RechargeUnlimitedFragment extends Fragment {
-    View view;
+
     CardView cardview;
     LayoutParams layoutparams;
     LayoutParams layoutparamsLinear;
+    View Rootview;
+    CardView firstCardView;
+    CardView secondCardView;
     Context context;
 
     String hostAddress = "http://10.10.40.58/vil/getRechargeData.php";
@@ -47,10 +51,28 @@ public class RechargeUnlimitedFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.recharge_unlimited_fragment, container, false);
+        Rootview = inflater.inflate(R.layout.recharge_unlimited_fragment, container, false);
+
         context = getActivity().getApplicationContext();
         getDetails();
-        return view;
+        firstCardView= (CardView) Rootview.findViewById(R.id.firstCardView);
+        firstCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),RazorPayGateway.class);
+                intent.putExtra("RechargeUnlimitedFragment","399");
+                startActivity(intent);
+            }
+        });
+        secondCardView = (CardView) Rootview.findViewById(R.id.secondCardView);secondCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getActivity(),RazorPayGateway.class);
+                intent1.putExtra("RechargeUnlimitedFragment","249");
+                startActivity(intent1);
+            }
+        });
+        return Rootview;
     }
 
     public void getDetails() {

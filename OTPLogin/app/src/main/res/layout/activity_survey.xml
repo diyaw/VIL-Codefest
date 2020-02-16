@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score"
+            android:text="@string/score"
             android:textSize="20sp"
             android:layout_alignParentLeft="true"
             android:id="@+id/score_text"/>
@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Which thing is alive?"
+        android:text="@string/quesone"
         android:textSize="20sp"
         android:padding="8dp"
         android:layout_marginBottom="40dp"
@@ -41,7 +41,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="bird"
+        android:text="@string/bird"
         android:background="@drawable/button_style"
         android:textColor="#fff"
         android:padding="8dp"
@@ -51,7 +51,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="door"
+        android:text="@string/door"
         android:background="@drawable/button_style"
         android:textColor="#fff"
         android:padding="8dp"
@@ -61,7 +61,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="rock"
+        android:text="@string/rock"
         android:background="@drawable/button_style"
         android:textColor="#fff"
         android:padding="8dp"

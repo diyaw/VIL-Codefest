@@ -30,7 +30,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Vodafone play"
+                    android:text="@string/vodafone_play"
                     android:textColor="@color/black"
                     android:fontFamily="sans-serif-smallcaps"
                     android:textSize="17sp"
@@ -52,7 +52,7 @@
                     android:background="@color/white"
 
 
-                    android:contentDescription="TODO" />
+                    android:contentDescription="@string/todo" />
 
                 <View
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Vodafone callertune"
+                    android:text="@string/vodafone_callertune"
                     android:textColor="@color/black"
 
                     android:fontFamily="sans-serif-smallcaps"
@@ -95,7 +95,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Vodafone REDX"
+                    android:text="@string/vodafone_redx"
                     android:textColor="@color/black"
                     android:textAlignment="center"
 
