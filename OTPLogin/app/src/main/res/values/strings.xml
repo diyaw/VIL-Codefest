@@ -60,7 +60,6 @@
     <string name="talktime_balance">Talktime Balance</string>
     <string name="data_left">Data left</string>
     <string name="ongoing">Ongoing</string>
-    <string name="validity">Validity</string>
     <string name="voda_coins">Voda Coins</string>
     <string name="vodafone_redx">Vodafone REDX</string>
     <string name="vodafone_play">Vodafone play</string>
@@ -70,18 +69,12 @@
     <string name="rs_49">Rs.49</string>
     <string name="talktime">talktime</string>
     <string name="rs_38">Rs.38</string>
-    <string name="data">Data</string>
     <string name="_100mb">100MB</string>
     <string name="validity">Validity</string>
     <string name="_28_days">28 days</string>
-    <string name="price">Price</string>
     <string name="rs_79">Rs.79</string>
     <string name="talktime2">Talktime</string>
     <string name="rs_64">Rs.64</string>
-    <string name="data">Data</string>
-    <string name="_100mb">100MB</string>
-    <string name="validity">Validity</string>
-    <string name="_28_days">28 days</string>
     <string name="check_balance">Check Balance</string>
     <string name="resend">Resend</string>
 

@@ -1,13 +1,19 @@
 package com.example.otplogin;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -40,10 +46,17 @@ public class VideoWebView extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 endTime = System.currentTimeMillis();
-                //loadFragment(new ScratchCards());
+                new callScratchCards();
             }
         });
         giveCredits(startTime, endTime);
+    }
+
+    class callScratchCards extends Activity {
+        @Nullable
+        public void onCreate(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            loadFragment(new ScratchCards());
+        }
     }
 
     public void giveCredits(long start, long end){
