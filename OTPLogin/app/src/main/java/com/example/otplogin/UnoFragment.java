@@ -139,7 +139,7 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
         dealsOffers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new D());
+                loadFragment(new DealsOffers());
             }
         });
         scratchCards = (Button)RootView.findViewById(R.id.scratchCards);
