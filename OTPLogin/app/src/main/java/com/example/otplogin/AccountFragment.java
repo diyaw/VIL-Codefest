@@ -55,11 +55,12 @@ public class AccountFragment extends Fragment {
     Button scratchcard;
 
     String hostAddress = "http://10.10.40.11/vil/getAccountInfo.php";
-    String phone = "";
+    static String phone = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         phone = user.getPhoneNumber();
 
@@ -83,6 +84,20 @@ public class AccountFragment extends Fragment {
             }
 
 
+//        vodaCoins.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                loadFragment(new VodaCoins());
+//            }
+//        });
+//
+//        scratchCards.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                loadFragment(new ScratchCards());
+//            }
+//        });
+
         });
 
 
@@ -93,6 +108,8 @@ public class AccountFragment extends Fragment {
                 loadFragment(new ScratchCards());
             }
         });
+
+
 
 
 

@@ -3,6 +3,8 @@ package com.example.otplogin;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
@@ -85,8 +87,8 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.btnUSSD).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,USSDLIst.class);
-                startActivity(intent);
+            Intent intent = new Intent(HomeActivity.this,VideoWebView.class);
+            startActivity(intent);
             }
         });
 
@@ -131,6 +133,15 @@ public class HomeActivity extends AppCompatActivity {
         long z = y/60;
         long progressPercent = (z/1440)*100;
         return progressPercent;
+    }
+
+    public void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 
