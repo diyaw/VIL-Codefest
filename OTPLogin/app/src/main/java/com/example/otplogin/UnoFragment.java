@@ -114,8 +114,12 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
         swipeButton.setOnStateChangeListener(new OnStateChangeListener() {
             @Override
             public void onStateChange(boolean active) {
+
                 Toast.makeText(getActivity(), "active"+active,
                         Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(),RazorPayGateway.class);
+                intent.putExtra("QRAmount","399");
+                startActivity(intent);
 
             }
         });
@@ -180,7 +184,7 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
     }
 
 
-    private String getNumberFromResult(ArrayList<String> results) {
+    String getNumberFromResult(ArrayList<String> results) {
         for (String str : results) {
             if (!getIntNumberFromText(str).equals("Sorry")) {
                 return getIntNumberFromText(str);
