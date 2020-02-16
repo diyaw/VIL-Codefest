@@ -35,6 +35,8 @@
 
     <string name="grouprecharge">Group Recharge</string>
     <string name="spendVodaCoins">Spend Vodacoins</string>
+    <string name="scratchcard">Scratch cards</string>
+    <string name="set_quick_charge">set quick charge</string>
 
 
 </resources>

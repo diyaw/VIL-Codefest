@@ -52,6 +52,7 @@ public class AccountFragment extends Fragment {
 
     Button vodaCoins;
     Button scratchCards;
+    Button scratchcard;
 
     String hostAddress = "http://10.10.40.11/vil/getAccountInfo.php";
     String phone = "";
@@ -60,31 +61,28 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        phone  = user.getPhoneNumber();
-
+        phone = user.getPhoneNumber();
 
 
         View RootView = inflater.inflate(R.layout.fragment_account, container, false);
         // Inflate the layout for this fragment
-        userName = (TextView)RootView.findViewById(R.id.nameView);
-        plan = (TextView)RootView.findViewById(R.id.planView);
-        talktimeBalanceView = (TextView)RootView.findViewById(R.id.talktimeBalanceView);
-        dataBalanceView = (TextView)RootView.findViewById(R.id.dataBalanceView);
-        phoneNumber = (TextView)RootView.findViewById(R.id.phoneNumber);
-        rechargePlan = (TextView)RootView.findViewById(R.id.lastRecharge);
-        validityDuration = (TextView)RootView.findViewById(R.id.validity);
-        Button signOut = (Button)RootView.findViewById(R.id.buttonSignOut);
+        userName = (TextView) RootView.findViewById(R.id.nameView);
+        plan = (TextView) RootView.findViewById(R.id.planView);
+        talktimeBalanceView = (TextView) RootView.findViewById(R.id.talktimeBalanceView);
+        dataBalanceView = (TextView) RootView.findViewById(R.id.dataBalanceView);
+        phoneNumber = (TextView) RootView.findViewById(R.id.phoneNumber);
+        rechargePlan = (TextView) RootView.findViewById(R.id.lastRecharge);
+        validityDuration = (TextView) RootView.findViewById(R.id.validity);
+        Button signOut = (Button) RootView.findViewById(R.id.buttonSignOut);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getActivity(),PhoneNumber.class);
+                Intent intent = new Intent(getActivity(), PhoneNumber.class);
                 startActivity(intent);
             }
-        });
 
-        //vodaCoins = RootView.findViewById(R.id.vodaCoins);
-        //scratchCards = RootView.findViewById(R.id.scratchCards);
+
 
 //        vodaCoins.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -99,6 +97,38 @@ public class AccountFragment extends Fragment {
 //                loadFragment(new ScratchCards());
 //            }
 //        });
+
+        });
+
+
+        Button buttonScratchCards = (Button)RootView.findViewById(R.id.buttonScratchCards);
+        buttonScratchCards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new ScratchCards());
+            }
+        });
+
+
+
+
+
+        //vodaCoins = RootView.findViewById(R.id.vodaCoins);
+        //scratchCards = RootView.findViewById(R.id.scratchCards);
+
+        //vodaCoins.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+                //loadFragment(new VodaCoins());
+            //}
+        //});
+
+        //scratchCards.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+                //loadFragment(new ScratchCards());
+            //}
+        //});
 
         //vodaCoins = RootView.findViewById(R.id.vodaCoins);
         //scratchCards = RootView.findViewById(R.id.scratchCards);

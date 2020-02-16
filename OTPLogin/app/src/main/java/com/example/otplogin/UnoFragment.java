@@ -28,6 +28,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.ebanx.swipebtn.OnStateChangeListener;
+import com.ebanx.swipebtn.SwipeButton;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
@@ -105,6 +107,18 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
 
                     }
                 });
+
+
+        SwipeButton swipeButton=(SwipeButton) RootView.findViewById(R.id.swipe_btn);
+
+        swipeButton.setOnStateChangeListener(new OnStateChangeListener() {
+            @Override
+            public void onStateChange(boolean active) {
+                Toast.makeText(getActivity(), "active"+active,
+                        Toast.LENGTH_LONG).show();
+
+            }
+        });
         return RootView;
     }
 
