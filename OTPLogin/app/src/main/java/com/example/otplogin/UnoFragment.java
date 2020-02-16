@@ -17,9 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-
-
-
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.graphics.Color;
@@ -141,8 +139,8 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                 case 10:
                     String Found = new UnoFragment().getNumberFromResult(data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS));
                     if (Found.equals("Recharge")) {
-                        Intent intent = new Intent(getActivity(), RechargeAllRounderFragment.class);
-                        startActivity(intent);
+                        loadFragment(new DosFragment());
+
                         //firstNumTextView.setText(String.valueOf(intFound));
                     } else if (Found.equals("Home")){
                         Intent intent = new Intent(getActivity(),MainActivity.class);
@@ -159,8 +157,7 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
 
 
                     } else if (Found.equals("Profile")) {
-                        Intent intent = new Intent(getActivity(), AccountFragment.class);
-                        startActivity(intent);
+                       loadFragment(new AccountFragment());
                     }
 
                     else if (Found.equals("Offers")) {
@@ -256,6 +253,16 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
             }
         }
     }
+
+    public void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 
 }
 

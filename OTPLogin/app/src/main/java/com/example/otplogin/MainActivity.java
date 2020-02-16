@@ -73,8 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 case 10:
                     String Found = new UnoFragment().getNumberFromResult(data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS));
                     if (Found.equals("Recharge")) {
-                        Intent intent = new Intent(MainActivity.this, RechargeAllRounderFragment.class);
-                        startActivity(intent);
+                        loadFragment(new DosFragment());
                         //firstNumTextView.setText(String.valueOf(intFound));
                     } else if (Found.equals("Home")){
                         Intent intent = new Intent(MainActivity.this,MainActivity.class);
@@ -91,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                     } else if (Found.equals("Profile")) {
-                        Intent intent = new Intent(MainActivity.this, AccountFragment.class);
-                        startActivity(intent);
+
+                        loadFragment(new AccountFragment());
                     }
 
                     else if (Found.equals("Offers")) {

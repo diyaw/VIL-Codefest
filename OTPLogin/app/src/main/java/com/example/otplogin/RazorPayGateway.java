@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.razorpay.Checkout;
@@ -30,10 +31,33 @@ public class RazorPayGateway extends AppCompatActivity implements PaymentResultL
 
         payAmount = findViewById(R.id.payAmount);
         Intent intent = getIntent();
+
         payAmount.setText(intent.getStringExtra("amountPrevious"));
 
         Intent intent1 = getIntent();
         payAmount.setText(intent1.getStringExtra("QRAmount"));
+
+
+        Intent intent2 = getIntent();
+
+        payAmount.setText(intent2.getStringExtra("RechargeUnlimitedFragment"));
+
+
+//        Intent intent3 = getIntent();
+//        payAmount.setText(intent3.getStringExtra("RechargeDataFragment"));
+//
+//
+//        Intent intent4 = getIntent();
+//        payAmount.setText(intent4.getStringExtra("RechargeRecommendedFragment"));
+//
+//
+//        Intent intent5 = getIntent();
+//        payAmount.setText(intent5.getStringExtra("RechargeUnlimitedFragment"));
+
+
+
+
+
 
 
         findViewById(R.id.pay).setOnClickListener(new View.OnClickListener() {
