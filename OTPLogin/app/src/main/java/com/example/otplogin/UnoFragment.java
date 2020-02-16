@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.provider.DocumentsContract;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
@@ -17,15 +18,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-
-
-
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.graphics.Color;
 import android.os.Bundle;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.ebanx.swipebtn.OnStateChangeListener;
@@ -45,6 +45,11 @@ import static android.app.Activity.RESULT_OK;
  */
 public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener {
     private static final int REQUEST_CALL = 1;
+
+    Button sastaRecharge;
+    Button earnCoins;
+    Button dealsOffers;
+    Button scratchCards;
 
     String arrayName[]={
             "1","2","3","4","5"
@@ -93,15 +98,6 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                                 intent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
                                 intent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH);
                                 startActivityForResult(intent2, 10);
-
-
-
-
-
-
-
-
-
                         }
 
 
@@ -123,6 +119,38 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
 
             }
         });
+
+        sastaRecharge = (Button)RootView.findViewById(R.id.sastaRecharge);
+        sastaRecharge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new RechargeGroupFragment());
+            }
+        });
+
+        earnCoins = (Button)RootView.findViewById(R.id.earnCoins);
+        earnCoins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new TresFragment());
+            }
+        });
+        dealsOffers = (Button)RootView.findViewById(R.id.dealsOffers);
+        dealsOffers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //loadFragment(new RechargeGroupFragment());
+            }
+        });
+        scratchCards = (Button)RootView.findViewById(R.id.scratchCards);
+        scratchCards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), VideoWebView.class);
+                startActivity(intent);
+            }
+        });
+
         return RootView;
     }
 
@@ -141,8 +169,8 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                 case 10:
                     String Found = new UnoFragment().getNumberFromResult(data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS));
                     if (Found.equals("Recharge")) {
-                        Intent intent = new Intent(getActivity(), RechargeAllRounderFragment.class);
-                        startActivity(intent);
+                        loadFragment(new DosFragment());
+
                         //firstNumTextView.setText(String.valueOf(intFound));
                     } else if (Found.equals("Home")){
                         Intent intent = new Intent(getActivity(),MainActivity.class);
@@ -159,8 +187,7 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
 
 
                     } else if (Found.equals("Profile")) {
-                        Intent intent = new Intent(getActivity(), AccountFragment.class);
-                        startActivity(intent);
+                       loadFragment(new AccountFragment());
                     }
 
                     else if (Found.equals("Offers")) {
@@ -256,6 +283,16 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
             }
         }
     }
+
+    public void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 
 }
 

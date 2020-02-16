@@ -11,6 +11,7 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/firstCardView"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:layout_centerHorizontal="true"
@@ -37,7 +38,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:text="Rs.249"
+                        android:text="Rs.399"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
@@ -114,7 +115,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:text="28 days"
+                        android:text="84 days"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
@@ -129,6 +130,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/secondCardView"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:layout_centerHorizontal="true"
@@ -155,7 +157,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:text="Rs.79"
+                        android:text="Rs.299"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
@@ -180,7 +182,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:text="Rs.64"
+                        android:text="Unlimited"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
@@ -206,7 +208,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:text="100MB"
+                        android:text="1GB/day"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
@@ -232,7 +234,7 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:text="28 days"
+                        android:text="64 days"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"

@@ -25,6 +25,16 @@ public class TresFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View RootView = inflater.inflate(R.layout.fragment_three, container, false);
+
+        Button playGames = (Button)RootView.findViewById(R.id.playGames);
+        playGames.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),VideoWebView.class);
+                startActivity(intent);
+            }
+        });
+
         Button button1 = (Button)RootView.findViewById(R.id.arButton);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,10 +62,6 @@ public class TresFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
-
         return RootView;
     }
 

@@ -44,17 +44,17 @@
 
 
                 <Button
+                    android:id="@+id/sastaRecharge"
                     android:layout_width="300dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-
                     android:layout_marginBottom="15dp"
-
                     android:background="@drawable/sasta_rechrage"></Button>
 
                 <Button
+                    android:id="@+id/earnCoins"
                     android:layout_width="300dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="12dp"
@@ -65,6 +65,7 @@
                     android:background="@drawable/banner_vodacoins"></Button>
 
                 <Button
+                    android:id="@+id/dealsOffers"
                     android:layout_width="300dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="12dp"
@@ -73,13 +74,12 @@
                     android:background="@drawable/offers"></Button>
 
                 <Button
+                    android:id="@+id/scratchCards"
                     android:layout_width="300dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginRight="20dp"
-
                     android:layout_marginBottom="15dp"
-
                     android:background="@drawable/scratch_card"></Button>
 
 
