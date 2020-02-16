@@ -35,6 +35,8 @@
     <string name="data">Data</string>
     <string name="entertainment">Entertainment</string>
 
+    <string name="clickImage">Click an Image.</string>
+
     <string name="google_maps_key">AIzaSyBEXojLNEIYeKmyBdshlDooE-o-JfZCCsU</string>
 
     <string name="grouprecharge">Group Recharge</string>
