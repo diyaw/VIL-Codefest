@@ -1,9 +1,14 @@
 package com.example.otplogin;
 
 import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.speech.RecognizerIntent;
@@ -18,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -126,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
     private String getIntNumberFromText(String strNum) {
         switch (strNum) {
             case "recharge":
+
                 return "Recharge";
             case "home":
                 return "Home";
@@ -188,6 +195,11 @@ public class MainActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
+
+
+
 
 
     //***************************************************************************************************

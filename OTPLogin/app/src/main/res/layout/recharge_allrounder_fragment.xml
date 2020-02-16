@@ -33,12 +33,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Price"
+                            android:text="@string/price"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="Rs.49"
+                            android:text="@string/rs_49"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
@@ -58,12 +58,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="talktime"
+                            android:text="@string/talktime"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="Rs.38"
+                            android:text="@string/rs_38"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
@@ -83,13 +83,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Data"
+                            android:text="@string/data"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="100MB"
+                            android:text="@string/_100mb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
@@ -109,13 +109,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Validity"
+                            android:text="@string/validity"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="28 days"
+                            android:text="@string/_28_days"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
@@ -153,12 +153,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Price"
+                            android:text="@string/price"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="Rs.79"
+                            android:text="@string/rs_79"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
@@ -178,12 +178,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Talktime"
+                            android:text="@string/talktime2"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="Rs.64"
+                            android:text="@string/rs_64"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
@@ -203,13 +203,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Data"
+                            android:text="@string/data"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="100MB"
+                            android:text="@string/_100mb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"
@@ -229,13 +229,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Validity"
+                            android:text="@string/validity"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:text="28 days"
+                            android:text="@string/_28_days"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="10dp"

@@ -37,7 +37,7 @@
         android:textStyle="bold"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColor="#000000"
-        android:text="Address"/>
+        android:text="@string/address"/>
 
 
     <TextView
@@ -51,7 +51,7 @@
         android:textStyle="bold"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColor="#000000"
-        android:text="Address"/>
+        android:text="@string/address"/>
 
 
     <Button
@@ -60,7 +60,7 @@
         android:layout_height="40dp"
 
         android:layout_marginTop="10dp"
-        android:text="View Routes"
+        android:text="@string/view_routes"
         android:textAllCaps="true"
         android:background="@drawable/button_style"
 

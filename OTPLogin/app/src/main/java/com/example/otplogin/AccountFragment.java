@@ -49,12 +49,13 @@ public class AccountFragment extends Fragment {
     TextView phoneNumber;
     TextView validityDuration;
     TextView rechargePlan;
+    TextView vodaCoin;
 
     Button vodaCoins;
     Button scratchCards;
     Button scratchcard;
 
-    String hostAddress = "http://10.10.40.11/vil/getAccountInfo.php";
+    String hostAddress = "http://10.10.40.58/vil/getAccountInfo.php";
     static String phone = "";
 
     @Override
@@ -74,6 +75,8 @@ public class AccountFragment extends Fragment {
         phoneNumber = (TextView) RootView.findViewById(R.id.phoneNumber);
         rechargePlan = (TextView) RootView.findViewById(R.id.lastRecharge);
         validityDuration = (TextView) RootView.findViewById(R.id.validity);
+        vodaCoin = (TextView)RootView.findViewById(R.id.vodaCoins);
+
         Button signOut = (Button) RootView.findViewById(R.id.buttonSignOut);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,6 +201,7 @@ public class AccountFragment extends Fragment {
                     String rechargeValidity = data.getString("recharge_validity");
                     String talktimeBalance = data.getString("talktime_balance");
                     String dataBalance = data.getString("data_balance");
+                    String vodaCoinVal = data.getString("voda_coins");
 
                     Log.e("data",phoneNo);
 
@@ -207,6 +211,7 @@ public class AccountFragment extends Fragment {
                     validityDuration.setText(rechargeValidity);
                     talktimeBalanceView.setText(talktimeBalance);
                     dataBalanceView.setText(dataBalance);
+                    vodaCoin.setText(vodaCoinVal);
                     if(planName.equals("1")){
                         plan.setText("Prepaid");
                     }else if (planName.equals("0")){
