@@ -13,7 +13,11 @@
     <string name="btn_signout">Sign Out</string>
     <string name="welcome">Welcome to our Profile</string>
     <string name="slogan">A Power to You</string>
-    <string name="hidden_Phone">Enter your Phone Number</string>
+    <string name="hidden_Phone">Enter your phone number</string>
+    <string name="hidden_Phone1">Enter 1st phone number</string>
+    <string name="hidden_Phone2">Enter 2nd phone number</string>
+    <string name="hidden_Phone3">Enter 3rd phone number</string>
+
     <string name="change_lang">Change Language</string>
     <string name="btn_Invite">Invite</string>
     <string name="vodafone" translatable="false">Vodafone</string>
@@ -34,9 +38,9 @@
     <string name="google_maps_key">AIzaSyBEXojLNEIYeKmyBdshlDooE-o-JfZCCsU</string>
 
     <string name="grouprecharge">Group Recharge</string>
-    <string name="spendVodaCoins">Spend Vodacoins</string>
-    <string name="scratchcard">Scratch cards</string>
-    <string name="set_quick_charge">set quick charge</string>
+    <string name="set_quick_charge">QuickRecharge</string>
+    <string name="scratchcard">Scratchcards</string>
+    <string name="spendVodaCoins">Spend coins</string>
 
 
 </resources>
