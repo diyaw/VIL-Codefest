@@ -27,6 +27,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         android:required="true"
@@ -46,7 +47,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ChatBot"></activity>
+        <activity android:name=".VideoWebView"></activity>
+        <activity android:name=".ChatBot" />
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -58,7 +60,7 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AugmentedFacesActivity" />
-        <activity android:name=".PhoneNumber"></activity>
+        <activity android:name=".PhoneNumber" />
         <activity android:name=".SurveyActivity" />
         <activity android:name=".InfoWindowAdapter" />
         <activity android:name=".InfoPage" />

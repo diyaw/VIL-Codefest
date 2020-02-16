@@ -87,6 +87,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
 
@@ -95,6 +97,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapNearBy2);
+
         mapFragment.getMapAsync(this);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -131,7 +134,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
+//        LatLng home = new LatLng(latitude,longitude);
+//
+//        MarkerOptions markerOptions1 = new MarkerOptions();
+//        markerOptions1.position(home);
+//        markerOptions1.title("Hi , You Are Here");
+//        markerOptions1.icon(BitmapDescriptorFactory.fromResource(R.mipmap.pin));
+//        mMap.addMarker(markerOptions1);
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(home));
+//        mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
+
 //        mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json));
 //        Intent intent = getIntent();
 //        double ulat = intent.getDoubleExtra("hlat",0);
@@ -205,6 +219,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (client != null){
             LocationServices.FusedLocationApi.removeLocationUpdates(client,this);
         }
+
+
 
 
     }

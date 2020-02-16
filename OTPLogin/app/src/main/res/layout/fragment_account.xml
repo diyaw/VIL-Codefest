@@ -230,26 +230,47 @@
             android:layout_gravity="center"
             android:layout_marginTop="45dp">
 
+            <Button
+                android:id="@+id/setqucikcharge"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:layout_margin="15dp"
+                android:layout_gravity="center"
 
-        <Button
-            android:id="@+id/buttonSignOut"
-            android:textColor="#fff"
-            android:background="@drawable/button_style"
-            android:layout_marginTop="35dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Out"/>
+                android:text="@string/set_quick_charge"
+                android:background="@drawable/shape_linear_layout"
+
+                ></Button>
+
+
+
+
 
             <Button
                 android:id="@+id/buttonScratchCards"
-                android:textColor="#fff"
-                android:background="@drawable/button_style"
-                android:layout_marginTop="35dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sign Out"/>
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:layout_margin="15dp"
+                android:text="@string/scratchcard"
+                android:background="@drawable/shape_linear_layout"
+                android:layout_gravity="center"
+
+                ></Button>
+
+            <Button
+                android:id="@+id/buttonSignOut"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:layout_margin="15dp"
+                android:layout_gravity="center"
+
+                android:text="@string/sign_out"
+                android:background="@drawable/shape_linear_layout"
+
+                ></Button>
 
     </LinearLayout>
     </LinearLayout>
