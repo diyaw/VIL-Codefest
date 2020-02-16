@@ -76,20 +76,12 @@ public class SurveyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 mButtonChoice3.setBackgroundColor(Color.rgb(0, 204, 68));
-
                 //My logic for Button goes in here
                 mButtonChoice3.setBackgroundColor(Color.rgb(0, 145, 234));
 
                updateQuestion();
             }
         });
-
-        //End of Button Listener for Button3
-
-
-
-
-
     }
 
     private void updateQuestion(){
@@ -97,23 +89,15 @@ public class SurveyActivity extends AppCompatActivity {
         mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
         mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
         mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
-
 //        mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
         if(mQuestionNumber++ == 3 ){
             openDialog();
-
-
+            UpdateCoins.updateVodaCoins("20");
         }
     }
 
     public void openDialog(){
         ThankDialog thankDialog = new ThankDialog();
         thankDialog.show(getSupportFragmentManager(),"thank Dialog");
-
     }
-
-
-//    private void updateScore(int point) {
-//
-//    }
 }

@@ -72,11 +72,8 @@ public class RazorPayGateway extends AppCompatActivity implements PaymentResultL
 
     @Override
     public void onPaymentSuccess(String s) {
-
+        UpdateCoins.updateVodaCoins("30");
         Toast.makeText(RazorPayGateway.this,"Your Payment is succcessful",Toast.LENGTH_SHORT).show();
-
-
-
     }
 
     @Override

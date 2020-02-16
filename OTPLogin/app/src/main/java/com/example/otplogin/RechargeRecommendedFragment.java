@@ -30,7 +30,7 @@ public class RechargeRecommendedFragment extends Fragment {
         price = (TextView)view.findViewById(R.id.planView);
         call = (TextView)view.findViewById(R.id.talktimeBalanceView);
         data = (TextView)view.findViewById(R.id.dataBalanceView);
-        validity = (TextView)view.findViewById(R.id.validityView);
+        // validity = (TextView)view.findViewById(R.id.validityView);
 
 
         return view;
