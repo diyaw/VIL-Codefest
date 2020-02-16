@@ -86,19 +86,19 @@ public class AccountFragment extends Fragment {
         //vodaCoins = RootView.findViewById(R.id.vodaCoins);
         //scratchCards = RootView.findViewById(R.id.scratchCards);
 
-        vodaCoins.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new VodaCoins());
-            }
-        });
-
-        scratchCards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new ScratchCards());
-            }
-        });
+//        vodaCoins.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                loadFragment(new VodaCoins());
+//            }
+//        });
+//
+//        scratchCards.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                loadFragment(new ScratchCards());
+//            }
+//        });
 
         //vodaCoins = RootView.findViewById(R.id.vodaCoins);
         //scratchCards = RootView.findViewById(R.id.scratchCards);
