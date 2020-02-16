@@ -32,6 +32,10 @@ public class RazorPayGateway extends AppCompatActivity implements PaymentResultL
         Intent intent = getIntent();
         payAmount.setText(intent.getStringExtra("amountPrevious"));
 
+        Intent intent1 = getIntent();
+        payAmount.setText(intent1.getStringExtra("QRAmount"));
+
+
         findViewById(R.id.pay).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
