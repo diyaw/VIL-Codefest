@@ -18,6 +18,7 @@
     <string name="hidden_Phone2">Enter 2nd phone number</string>
     <string name="hidden_Phone3">Enter 3rd phone number</string>
 
+    <string name="clickImage">Click an Image</string>
     <string name="change_lang">Change Language</string>
     <string name="btn_Invite">Invite</string>
     <string name="vodafone" translatable="false">Vodafone</string>

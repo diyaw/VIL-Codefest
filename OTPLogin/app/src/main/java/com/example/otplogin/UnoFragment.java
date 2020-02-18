@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.provider.DocumentsContract;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.ebanx.swipebtn.OnStateChangeListener;
@@ -43,6 +45,11 @@ import static android.app.Activity.RESULT_OK;
  */
 public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener {
     private static final int REQUEST_CALL = 1;
+
+    Button sastaRecharge;
+    Button earnCoins;
+    Button dealsOffers;
+    Button scratchCards;
 
     String arrayName[]={
             "1","2","3","4","5"
@@ -91,15 +98,6 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                                 intent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
                                 intent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH);
                                 startActivityForResult(intent2, 10);
-
-
-
-
-
-
-
-
-
                         }
 
 
@@ -121,6 +119,38 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
 
             }
         });
+
+        sastaRecharge = (Button)RootView.findViewById(R.id.sastaRecharge);
+        sastaRecharge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new RechargeGroupFragment());
+            }
+        });
+
+        earnCoins = (Button)RootView.findViewById(R.id.earnCoins);
+        earnCoins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new TresFragment());
+            }
+        });
+        dealsOffers = (Button)RootView.findViewById(R.id.dealsOffers);
+        dealsOffers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new DealsOffers());
+            }
+        });
+        scratchCards = (Button)RootView.findViewById(R.id.scratchCards);
+        scratchCards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), VideoWebView.class);
+                startActivity(intent);
+            }
+        });
+
         return RootView;
     }
 

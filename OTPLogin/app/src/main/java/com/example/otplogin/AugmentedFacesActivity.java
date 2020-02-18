@@ -249,6 +249,7 @@ public class AugmentedFacesActivity extends AppCompatActivity {
         PixelCopy.request(view, bitmap, (copyResult) -> {
             if (copyResult == PixelCopy.SUCCESS) {
                 try {
+                    UpdateCoins.updateVodaCoins("40");
                     saveBitmapToDisk(bitmap, filename);
                 } catch (IOException e) {
                     Toast toast = Toast.makeText(AugmentedFacesActivity.this, e.toString(),
