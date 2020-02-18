@@ -152,7 +152,7 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
 
                     }  else if (Found.equals("QuickRecharge")){
                         Intent intent = new Intent(getActivity(),RazorPayGateway.class);
-                        intent.putExtra("amountPrevious","399");
+                        intent.putExtra("RechargeUnlimitedFragment","399");
                         startActivity(intent);
 
 

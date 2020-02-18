@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }  else if (Found.equals("QuickRecharge")){
                         Intent intent = new Intent(MainActivity.this,RazorPayGateway.class);
-                        intent.putExtra("amountPrevious","399");
+                        intent.putExtra("RechargeUnlimitedFragment","399");
                         startActivity(intent);
 
 
