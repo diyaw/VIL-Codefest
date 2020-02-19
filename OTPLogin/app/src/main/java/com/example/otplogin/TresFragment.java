@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 
 public class TresFragment extends Fragment {
@@ -62,8 +63,26 @@ public class TresFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        Button spendCoins = (Button)RootView.findViewById(R.id.spend_voda_coins);
+        spendCoins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new DealsOffers());
+            }
+        });
         return RootView;
     }
+
+    public void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 
 
 

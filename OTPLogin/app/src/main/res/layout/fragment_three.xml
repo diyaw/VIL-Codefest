@@ -94,7 +94,6 @@
                     android:layout_margin="15dp"
                     android:text="@string/spendVodaCoins"
                     android:background="@drawable/shape_linear_layout"
-
                     ></Button>
 
 

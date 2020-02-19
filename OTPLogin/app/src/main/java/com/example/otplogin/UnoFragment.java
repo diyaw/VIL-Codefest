@@ -114,7 +114,7 @@ public class UnoFragment extends Fragment implements TextToSpeech.OnInitListener
                 Toast.makeText(getActivity(), "active"+active,
                         Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getActivity(),RazorPayGateway.class);
-                intent.putExtra("QRAmount","399");
+                intent.putExtra("RechargeUnlimitedFragment","399");
                 startActivity(intent);
 
             }

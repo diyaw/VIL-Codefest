@@ -229,22 +229,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="45dp">
 
-            <Button
-                android:id="@+id/setqucikcharge"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:textColor="@color/white"
-                android:layout_margin="15dp"
-                android:layout_gravity="center"
-
-                android:text="@string/set_quick_charge"
-                android:background="@drawable/shape_linear_layout"
-
-                ></Button>
-
-
-
-
 
             <Button
                 android:id="@+id/buttonScratchCards"
